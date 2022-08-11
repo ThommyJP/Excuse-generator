@@ -1,11 +1,24 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+window.onload = () => {
+  document.getElementById("excuse").innerHTML = gexcusa();
+};
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+function random(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
+let gexcusa = () => {
+  let who = ["My dog", "My grandpapi", "A Bird"];
+  let action = ["ate", "pooped", "grabbed"];
+  let what = ["my homework", "the car", "the roof"];
+  let when = ["last night.", "right now.", "while I was asleep."];
+
+  return (
+    who[random(0, 3)] +
+    " " +
+    action[random(0, 3)] +
+    " " +
+    what[random(0, 3)] +
+    " " +
+    when[random(0, 3)]
+  );
 };
